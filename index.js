@@ -14,9 +14,9 @@ const corsOptions ={
 
 app.use(cors(corsOptions));
 
-app.get('/:country', async (req, res) =>{
+app.get('/', async (req, res) =>{
     try{
-        const response = await fetch(`https://calendarific.com/api/v2/holidays?&api_key=${process.env.REACT_APP_CALENDARIFIC_API_KEY}&country=${req.params.country}&year=2022`);
+        const response = await fetch(`https://calendarific.com/api/v2/holidays?&api_key=${process.env.REACT_APP_CALENDARIFIC_API_KEY}&country=PK&year=2022`);
         if(!response.ok){
             throw new Error(`Error: ${response.status}`);
         }

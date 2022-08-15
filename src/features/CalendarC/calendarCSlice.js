@@ -5,7 +5,7 @@ export const loadEvents = createAsyncThunk(
     'calendarC/loadEvents',
     async (countryCode) =>{
         try{
-            const response = await fetch(`https://process.env.PORT/${countryCode}`);
+            const response = await fetch(`https://git.heroku.com/guarded-basin-15580.git/${countryCode}`);
             if(!response.ok){
                 throw new Error(`Error: ${response.status}`);
             }
