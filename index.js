@@ -7,9 +7,12 @@ const cors = require("cors");
 
 app.use(cors());
 
-app.get('/', (req, res) =>{
-    res.json('Hi')
-});
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('build'));
+    app.get('*', (req, res) =>{
+        req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+    })
+}
 app.get('/:countryCode', async (req, res) =>{
     try{
         const response = await fetch(`https://calendarific.com/api/v2/holidays?&api_key=${process.env.REACT_APP_CALENDARIFIC_API_KEY}&country=${req.params.countryCode}&year=2022`);
@@ -22,9 +25,6 @@ app.get('/:countryCode', async (req, res) =>{
             console.log(err);
         }
 });
-
-
-
 
 
 app.listen(PORT, () => {
