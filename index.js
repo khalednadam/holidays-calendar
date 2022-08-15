@@ -1,12 +1,18 @@
 const PORT = process.env.PORT || 8000;
 const express = require('express');
-const cors = require('cors');
 require('dotenv').config();
 const fetch = require("node-fetch");
 
 const app = express();
 
-app.use(cors());
+const cors = require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions));
 
 app.get('/:country', async (req, res) =>{
     try{
