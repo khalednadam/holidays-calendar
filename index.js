@@ -20,6 +20,7 @@ app.get('/:countryCode', async (req, res) =>{
             throw new Error(`Error: ${response.status}`);
         }
         const json = await response.json();
+        console.log(req.params.countryCode);
         res.json(json);
         }catch(err){
             console.log(err);
