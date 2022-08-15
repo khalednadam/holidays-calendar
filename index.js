@@ -15,7 +15,6 @@ app.get('/:country', async (req, res) =>{
             throw new Error(`Error: ${response.status}`);
         }
         const json = await response.json();
-        res.send('hellooo')
         res.json(json);
         }catch(err){
             console.log(err);
