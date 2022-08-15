@@ -5,7 +5,7 @@ export const loadEvents = createAsyncThunk(
     'calendarC/loadEvents',
     async (countryCode) =>{
         try{
-            const response = await fetch(`http://localhost:${process.env.PORT}/${countryCode}`);
+            const response = await fetch(`http://holiday-calendar-app.herokuapp.com:${process.env.PORT}/${countryCode}`);
             if(!response.ok){
                 throw new Error(`Error: ${response.status}`);
             }
