@@ -1,4 +1,4 @@
-const PORT = process.env.PORT ||8000;
+const PORT = process.env.PORT || 8000;
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -25,4 +25,4 @@ app.get('/:country', async (req, res) =>{
 
 
 
-app.listen(8000, () => console.log(`Backend is running on PORT: ${PORT}`));
+app.listen(process.env.PORT, () => console.log(`Backend is running on PORT: ${PORT}`));
