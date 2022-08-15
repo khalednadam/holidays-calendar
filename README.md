@@ -1,4 +1,4 @@
-# Holiday Calendar
+# Holidays Calendar
 > a react app that shows holidays for a selected country
 
 ## Technologies and Tools
@@ -9,4 +9,3 @@
 - Calendarific API
 - Rest Countries API
 - React Big Calendar
-# holidays-calendar
