@@ -25,4 +25,6 @@ app.get('/:country', async (req, res) =>{
 
 
 
-app.listen(PORT, () => console.log(`Backend is running on PORT: ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Backend is running on PORT: ${PORT}`);
+});
