@@ -18,3 +18,15 @@ function App() {
 }
 
 export default App;
+
+
+// try{
+//     const response = await fetch(`http://holiday-calendar-backend.herokuapp.com/${countryCode}`);
+//     if(!response.ok){
+//         throw new Error(`Error: ${response.status}`);
+//     }
+//     const json = await response.json();
+//     return json;
+// }catch(err){
+//     console.log(err);
+// }

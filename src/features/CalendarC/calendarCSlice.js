@@ -5,18 +5,16 @@ export const loadEvents = createAsyncThunk(
     'calendarC/loadEvents',
     async (countryCode) =>{
         try{
-            const response = await fetch(`http://localhost:8000/${countryCode}`);
+            const response = await fetch(`https://calendarific.com/api/v2/holidays?&api_key=${process.env.REACT_APP_CALENDARIFIC_API_KEY}&country=${countryCode}&year=2022`);
             if(!response.ok){
                 throw new Error(`Error: ${response.status}`);
             }
             const json = await response.json();
             return json;
-        }catch(err){
-            console.log(err);
-        }
+    }catch(err){
+        console.log(err);
     }
-    
-)
+});
 
 export const calendarC = createSlice({
     name: 'calendarC',
