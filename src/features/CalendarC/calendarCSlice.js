@@ -5,7 +5,7 @@ export const loadEvents = createAsyncThunk(
     'calendarC/loadEvents',
     async (countryCode) =>{
         try{
-            const response = await fetch(`https://calendarific.com/api/v2/holidays?&api_key=${process.env.REACT_APP_CALENDARIFIC_API_KEY}&country=${countryCode}&year=2022`);
+            const response = await fetch(`https://calendarific.com/api/v2/holidays?&api_key=${process.env.REACT_APP_CALENDARIFIC_API_KEY}&country=${countryCode}&year=2023`);
             if(!response.ok){
                 throw new Error(`Error: ${response.status}`);
             }
